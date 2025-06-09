@@ -1,0 +1,216 @@
+/* CSS Variables for easy theme management */
+:root {
+    --light-blue: #bfd4ef;/*#a8d8e0;*/
+    --nude: /*#f1d7c3;*/ #f4f1eb;
+    --dark-text: #3d405b;
+    --accent-color: #bfd4ef;/*#81b29a;*/
+    --white: #ffffff;
+    --font-family: 'Figtree', sans-serif;
+}
+
+/* Base styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--nude);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    text-align: center;
+    overflow-x: hidden; /* Prevents horizontal scrollbar from animations */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header & Logo */
+.page-header {
+    padding: 40px 0;
+}
+.logo img {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 40px 20px 60px;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    margin-bottom: 60px;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive font size */
+    font-weight: 900;
+    color: var(--accent-color);
+    margin: 0 0 20px 0;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--light-blue), var(--accent-color));
+    color: var(--white);
+    padding: 18px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(129, 155, 178, 0.4);
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(129, 155, 178, 0.6);
+}
+
+/* Social Link */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+.social-link:hover {
+    color: var(--accent-color);
+}
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    margin-right: 12px;
+}
+
+/* Stacked Text "Grid" */
+.stacked-text-wrapper {
+    padding: 40px 0;
+}
+.stacked-text {
+    font-weight: 900;
+    font-size: clamp(4rem, 15vw, 7rem);
+    line-height: 0.85;
+    letter-spacing: -3px;
+    color: var(--light-blue);
+    text-transform: uppercase;
+}
+.stacked-text.alt {
+    color: var(--accent-color);
+}
+
+
+/* Content Sections */
+.content-section {
+    padding: 40px 20px;
+    text-align: left;
+}
+.content-section h2 {
+    text-align: center;
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+.content-section h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.content-section p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* Q&A Section */
+.qa-section details {
+    background: var(--white);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+}
+.qa-section details[open] {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+.qa-section summary {
+    padding: 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    list-style: none; /* remove triangle */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.qa-section summary::-webkit-details-marker {
+    display: none;
+}
+.qa-section summary::after {
+    content: '+';
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--light-blue);
+    transition: transform 0.3s ease;
+}
+.qa-section details[open] summary::after {
+    transform: rotate(45deg);
+}
+.faq-content {
+    padding: 0 25px 25px 25px;
+    overflow: hidden;
+}
+
+/* Footer */
+.page-footer {
+    padding: 40px 20px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* REVEAL ON SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for children */
+.reveal.visible .reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero-section.visible p, 
+.hero-section.visible form, 
+.hero-section.visible .social-link {
+    transition-delay: 0.2s;
+}
+
+/* Add different delays for a more dynamic feel */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+/* ... and so on, if needed */
