@@ -179,6 +179,12 @@ body {
     overflow: hidden;
 }
 
+.qa-section a{
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
 /* Footer */
 .page-footer {
     padding: 40px 20px;
