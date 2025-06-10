@@ -228,3 +228,103 @@ body {
 .reveal:nth-child(2) { transition-delay: 0.1s; }
 .reveal:nth-child(3) { transition-delay: 0.2s; }
 /* ... and so on, if needed */
+
+/* --- Mailchimp Form Styles --- */
+
+#signup-form {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    padding: 40px 20px 60px;
+}
+
+#mc_embed_signup {
+    background: transparent;
+    font-family: var(--font-family);
+    color: var(--dark-text);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#mc_embed_signup h2 {
+    font-weight: 900;
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#mc_embed_signup .indicates-required {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mc-field-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.mc-field-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.mc-field-group input[type="email"],
+.mc-field-group input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    box-sizing: border-box; /* Important for padding and width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.mc-field-group input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(129, 178, 154, 0.3);
+    outline: none;
+}
+
+#mc-embedded-subscribe {
+    /* Apply the exact same styles as .cta-button */
+    display: inline-block;
+    background: linear-gradient(45deg, var(--light-blue), var(--accent-color));
+    color: var(--white);
+    padding: 18px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(129, 155, 178, 0.4);
+    width: 100%; /* Make button full width on form */
+    -webkit-appearance: none;
+}
+#mc-embedded-subscribe:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(129, 155, 178, 0.6);
+}
+
+#mce-responses {
+    margin: 20px 0;
+}
+.response {
+    text-align: center;
+    font-weight: 700;
+}
+#mce-error-response {
+    color: #e74c3c;
+}
+#mce-success-response {
+    color: var(--accent-color);
+}

@@ -46,4 +46,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // --- SMOOTH SCROLL FOR IN-PAGE LINKS ---
+    // This handles clicking on links like the "SIGN UP" button for a smooth scroll.
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Stop the default browser jump
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // Aligns the top of the form to the top of the viewport
+                });
+            }
+        });
+    });
+
 });
