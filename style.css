@@ -9,10 +9,10 @@
     --font-family: 'Figtree', sans-serif;
     */
 
-    --light-blue: #bfd4ef;
-    --nude: #f4f1eb;
+    --light-blue: #F6dbcc;
+    --nude: #bfd4ef; /*background*/
     --dark-text: #3d405b;
-    --accent-color: #bfd4ef;
+    --accent-color: #F6dbcc;
     --white: #ffffff;
     --font-family: 'League Spartan', sans-serif;
 }
