@@ -46,22 +46,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- SMOOTH SCROLL FOR IN-PAGE LINKS ---
-    // This handles clicking on links like the "SIGN UP" button for a smooth scroll.
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the default browser jump
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+    /* --- MODAL DIALOG LOGIC --- */
+    const modalOverlay = document.getElementById('signup-modal');
+    const openModalBtn1 = document.getElementById('open-signup-modal-1');
+    const openModalBtn2 = document.getElementById('open-signup-modal-2');
+    const closeModalBtn = document.getElementById('close-signup-modal');
 
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start' // Aligns the top of the form to the top of the viewport
-                });
+    // Function to open the modal
+    const openModal = () => {
+        modalOverlay.classList.add('visible');
+        document.body.classList.add('modal-open'); // Prevents background scroll
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+        modalOverlay.classList.remove('visible');
+        document.body.classList.remove('modal-open');
+    };
+
+    // Event listeners
+    if (openModalBtn1 && openModalBtn2 && modalOverlay && closeModalBtn) {
+        openModalBtn1.addEventListener('click', openModal);
+        openModalBtn2.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking on the overlay background
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                closeModal();
             }
         });
-    });
+
+        // Close modal with the "Escape" key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modalOverlay.classList.contains('visible')) {
+                closeModal();
+            }
+        });
+    }
+
 
 });

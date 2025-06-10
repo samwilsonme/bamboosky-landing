@@ -29,6 +29,11 @@ body {
     overflow-x: hidden; /* Prevents horizontal scrollbar from animations */
 }
 
+/* Class added by JS to prevent page scroll when modal is open */
+.modal-open {
+    overflow: hidden;
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -224,12 +229,63 @@ body {
     transition-delay: 0.2s;
 }
 
-/* Add different delays for a more dynamic feel */
-.reveal:nth-child(2) { transition-delay: 0.1s; }
-.reveal:nth-child(3) { transition-delay: 0.2s; }
-/* ... and so on, if needed */
+/* --- Modal Styles --- */
 
-/* --- Mailchimp Form Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 64, 91, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    max-width: 500px;
+    width: 90%;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.modal-close-btn:hover {
+    color: var(--dark-text);
+}
+
+/* --- Mailchimp Form Styles (inside the modal) --- */
 
 #signup-form {
     background-color: var(--white);
