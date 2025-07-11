@@ -46,44 +46,78 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    /* --- MODAL DIALOG LOGIC --- */
-    const modalOverlay = document.getElementById('signup-modal');
+    /* --- SIGNUP MODAL DIALOG LOGIC --- */
+    const signupModalOverlay = document.getElementById('signup-modal');
     const openModalBtn1 = document.getElementById('open-signup-modal-1');
     const openModalBtn2 = document.getElementById('open-signup-modal-2');
-    const closeModalBtn = document.getElementById('close-signup-modal');
+    const closeSignupModalBtn = document.getElementById('close-signup-modal');
 
-    // Function to open the modal
-    const openModal = () => {
-        modalOverlay.classList.add('visible');
-        document.body.classList.add('modal-open'); // Prevents background scroll
+    // Function to open the signup modal
+    const openSignupModal = () => {
+        signupModalOverlay.classList.add('visible');
+        document.body.classList.add('modal-open');
     };
 
-    // Function to close the modal
-    const closeModal = () => {
-        modalOverlay.classList.remove('visible');
+    // Function to close the signup modal
+    const closeSignupModal = () => {
+        signupModalOverlay.classList.remove('visible');
         document.body.classList.remove('modal-open');
     };
 
-    // Event listeners
-    if (openModalBtn1 && openModalBtn2 && modalOverlay && closeModalBtn) {
-        openModalBtn1.addEventListener('click', openModal);
-        openModalBtn2.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
+    // Event listeners for signup modal
+    if (openModalBtn1 && openModalBtn2 && signupModalOverlay && closeSignupModalBtn) {
+        openModalBtn1.addEventListener('click', openSignupModal);
+        openModalBtn2.addEventListener('click', openSignupModal);
+        closeSignupModalBtn.addEventListener('click', closeSignupModal);
 
         // Close modal when clicking on the overlay background
-        modalOverlay.addEventListener('click', (event) => {
-            if (event.target === modalOverlay) {
-                closeModal();
-            }
-        });
-
-        // Close modal with the "Escape" key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modalOverlay.classList.contains('visible')) {
-                closeModal();
+        signupModalOverlay.addEventListener('click', (event) => {
+            if (event.target === signupModalOverlay) {
+                closeSignupModal();
             }
         });
     }
 
+    /* --- RESERVATION MODAL DIALOG LOGIC --- */
+    const reservationModal = document.getElementById('reservation-modal');
+    const openReservationBtn = document.getElementById('reserve-table');
+    const closeReservationBtn = document.getElementById('close-reservation-modal');
+
+    // Function to open the reservation modal
+    const openReservationModal = () => {
+        reservationModal.classList.add('visible');
+        document.body.classList.add('modal-open');
+    };
+
+    // Function to close the reservation modal
+    const closeReservationModal = () => {
+        reservationModal.classList.remove('visible');
+        document.body.classList.remove('modal-open');
+    };
+
+    // Event listeners for reservation modal
+    if (openReservationBtn && reservationModal && closeReservationBtn) {
+        openReservationBtn.addEventListener('click', openReservationModal);
+        closeReservationBtn.addEventListener('click', closeReservationModal);
+
+        // Close modal when clicking on the overlay background
+        reservationModal.addEventListener('click', (event) => {
+            if (event.target === reservationModal) {
+                closeReservationModal();
+            }
+        });
+    }
+
+    // Global escape key handler for both modals
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            if (signupModalOverlay.classList.contains('visible')) {
+                closeSignupModal();
+            }
+            if (reservationModal.classList.contains('visible')) {
+                closeReservationModal();
+            }
+        }
+    });
 
 });

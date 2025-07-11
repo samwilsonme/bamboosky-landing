@@ -74,8 +74,6 @@ body {
 /* Call to Action Button */
 .cta-button {
     display: inline-block;
-    background: linear-gradient(45deg, var(--light-blue), var(--accent-color));
-    color: var(--white);
     padding: 18px 40px;
     text-decoration: none;
     font-weight: 700;
@@ -84,12 +82,90 @@ body {
     border-radius: 50px;
     margin-top: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Primary Button Style */
+.primary-btn {
+    background: linear-gradient(45deg, var(--light-blue), var(--accent-color));
+    color: var(--white);
     box-shadow: 0 5px 15px rgba(129, 155, 178, 0.4);
 }
-.cta-button:hover {
+
+.primary-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(129, 155, 178, 0.6);
+}
+
+/* Secondary Button Style */
+.secondary-btn {
+    background: transparent;
+    color: var(--dark-text);
+    border: 2px solid var(--light-blue);
+    padding: 16px 38px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.secondary-btn:hover {
+    background: var(--light-blue);
+    color: var(--white);
+    opacity: 1;
+}
+
+/* Booking Buttons */
+.booking-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.booking-btn {
+    margin: 0;
+    width: 220px; /* Fixed width for booking buttons */
+    padding: 18px 20px; /* Adjusted padding for fixed width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Force same dimensions for both button and anchor */
+.booking-btn.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Fixed height */
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Ensure anchor tag has same properties as button */
+a.booking-btn {
+    text-decoration: none;
+}
+
+/* Social and Updates Section */
+.social-updates-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-section .social-link,
+.hero-section .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: auto;
+    min-width: 200px;
+}
+
+.hero-section .social-link {
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 /* Social Link */
@@ -383,4 +459,74 @@ body {
 }
 #mce-success-response {
     color: var(--accent-color);
+}
+
+/* Reservation Modal */
+#reservation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 64, 91, 0.9);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#reservation-modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reservation-modal-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* DesignMyNight Widget Styles */
+#dmn-partner-widget {
+    min-height: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#dmn-partner-widget iframe {
+    width: 100% !important;
+    min-height: 450px !important;
+    border: none !important;
+}
+
+/* Ensure the widget is visible in the modal */
+#reservation-modal.visible #dmn-partner-widget {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media Queries for Booking Buttons */
+@media (max-width: 600px) {
+    .booking-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .booking-btn {
+        width: 100%;
+    }
+
+    .hero-section .social-link,
+    .hero-section .secondary-btn {
+        width: 100%;
+    }
 }
