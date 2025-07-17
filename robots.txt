@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+Disallow: /api
+Allow: /
+Crawl-delay: 10
+Sitemap: https://bamboosky.co.uk/sitemap-index.xml
+Host: bamboosky.co.uk
