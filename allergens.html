@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergen Information - Bamboo Sky</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Allergen information for Bamboo Sky Thai restaurant and botanical brew house in Bourn, Cambridgeshire.">
+    <meta name="keywords" content="Bamboo Sky, allergens, allergies, food safety, Thai restaurant, Bourn, Cambridgeshire">
+    <meta name="author" content="Bamboo Sky">
+
+    <link rel="canonical" href="https://bamboosky.co.uk/allergens" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1LDV93507"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-J1LDV93507');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2029408407585795');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2029408407585795&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for easy theme management */
+        :root {
+            --light-blue: #F6dbcc;
+            --nude: #bfd4ef;
+            --dark-text: #3d405b;
+            --accent-color: #F6dbcc;
+            --white: #ffffff;
+            --font-family: 'League Spartan', sans-serif;
+        }
+
+        /* Base styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--nude);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Logo */
+        .page-header {
+            padding: 40px 0;
+        }
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 40px 20px;
+            background-color: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 0 0 30px 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .pdf-download {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, var(--light-blue), var(--accent-color));
+            color: var(--white);
+            padding: 18px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(129, 155, 178, 0.4);
+        }
+
+        .pdf-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(129, 155, 178, 0.6);
+        }
+
+        .pdf-download svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: currentColor;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        .important-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .important-notice h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .allergen-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .allergen-item {
+            background: var(--nude);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Footer */
+        .page-footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="content-section">
+            <h1>Allergen Information</h1>
+            
+            <div class="important-notice">
+                <h3>Important Notice</h3>
+                <p>Please inform our staff of any allergies or dietary requirements when ordering. While we take great care to avoid cross-contamination, our kitchen handles all major allergens and we cannot guarantee that any dish is completely allergen-free.</p>
+            </div>
+
+            <h2>Detailed Allergen Information</h2>
+            <p>For detailed allergen information for all our menu items, please download our comprehensive allergen guide below. This document contains specific allergen information for each dish on our menu.</p>
+
+            <a href="allegen-information-summer-2025.pdf" class="pdf-download" download>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" /></svg>
+                Download Allergen Guide (PDF)
+            </a>
+
+            <h2>Additional Information</h2>
+            <p>If you have severe allergies or require specific dietary accommodations, please speak directly with our kitchen staff when placing your order. We're happy to discuss ingredients and preparation methods to ensure your safety and enjoyment.</p>
+            
+            <p>For any questions about allergens, please contact us at <a href="mailto:hello@bamboosky.co.uk" style="color: var(--accent-color); text-decoration: none; font-weight: 700;">hello@bamboosky.co.uk</a> or speak with our team when you visit.</p>
+        </section>
+
+        <footer class="page-footer">
+            <p>&copy; 2025 Bamboo Sky. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html> 
